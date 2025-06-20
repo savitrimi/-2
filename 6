@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ตรวจสอบช่วงอายุ</title>
+</head>
+<body>
+
+<h2>ตรวจสอบช่วงอายุของคุณ</h2>
+
+<form method="post">
+    <label for="age">กรอกอายุของคุณ:</label>
+    <input type="number" name="age" id="age" required>
+    <input type="submit" value="ตรวจสอบช่วงอายุ">
+</form>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $age = $_POST["age"];
+
+    switch (true) {
+        case ($age > 60):
+            echo "<p><strong>คุณอยู่ในวัยสูงอายุ</strong></p>";
+            break;
+        case ($age > 40):
+            echo "<p><strong>คุณอยู่ในวัยกลางคน</strong></p>";
+            break;
+        case ($age > 20):
+            echo "<p><strong>คุณอยู่ในวัยผู้ใหญ่</strong></p>";
+            break;
+        case ($age > 12):
+            echo "<p><strong>คุณอยู่ในวัยรุ่น</strong></p>";
+            break;
+        case ($age > 6):
+            echo "<p><strong>คุณอยู่ในวัยเด็ก</strong></p>";
+            break;
+        case ($age > 0):
+            echo "<p><strong>คุณอยู่ในวัยทารก</strong></p>";
+            break;
+        default:
+            echo "<p style='color:red;'><strong>กรุณากรอกอายุให้ถูกต้อง</strong></p>";
+    }
+}
+?>
+
+</body>
+</html>
