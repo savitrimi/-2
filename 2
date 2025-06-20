@@ -1,30 +1,24 @@
 <?php
-$month = "ธันวาคม"; // ใส่ชื่อเดือน
+$age = 25; // กำหนดอายุ
 
-switch ($month) {
-    case "มกราคม":
-    case "มีนาคม":
-    case "พฤษภาคม":
-    case "กรกฎาคม":
-    case "สิงหาคม":
-    case "ตุลาคม":
-    case "ธันวาคม":
-        echo "เดือน $month มี 31 วัน";
+switch (true) {
+    case ($age > 60):
+        echo "คุณอยู่ในวัยชรา";
         break;
-
-    case "เมษายน":
-    case "มิถุนายน":
-    case "กันยายน":
-    case "พฤศจิกายน":
-        echo "เดือน $month มี 30 วัน";
+    case ($age > 40):
+        echo "คุณอยู่ในวัยกลางคน";
         break;
-
-    case "กุมภาพันธ์":
-        echo "เดือน $month มี 28 หรือ 29 วัน";
+    case ($age > 20):
+        echo "คุณอยู่ในวัยหนุ่มสาว";
         break;
-
+    case ($age > 12):
+        echo "คุณอยู่ในวัยรุ่น";
+        break;
+    case ($age > 6):
+        echo "คุณอยู่ในวัยเด็ก";
+        break;
     default:
-        echo "ชื่อเดือนไม่ถูกต้อง";
+        echo "คุณอยู่ในวัยทารก";
         break;
 }
 ?>
